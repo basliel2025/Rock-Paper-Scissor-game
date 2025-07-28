@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script> 
+        let humanScore =0;
+        let computerScore =0;
+      function getComputerChoice(){
+        const choice = ['rock','paper','scissor'];
+        const pick = choice[Math.floor(Math.random()*choice.length)];
+        return pick;
+      }
+      function getHumanChoice(){
+        let value ;
+        while(true){
+            value = prompt('enter value');
+            if (value === null){
+                return null;
+            }
+             if(value == 'rock' || value == 'paper' || value=='scissors'){
+                return value;
+            }
+             else{
+                alert(`invalid input`);
+            }
+        }
+      }
+      function playGround(humanChoice, computerChoice){
+        if(humanChoose === 'rock' && computerChoose === 'paper'){
+            console.log('you lose, paper beat rock');
+            computerScore+=1;
+        }
+        else if(humanChoose === 'paper' && computerChoose === 'scissors'){
+            console.log('you lose, scissors beat paper');
+            computerScore+=1;
+        }
+        else if(humanChoose === 'scissors' && computerChoose === 'rock'){
+            console.log('you lose, rock beat scissors');
+            computerScore+=1;
+        }
+        else if(humanChoose === 'scissors' && computerChoose === 'paper'){
+            console.log('you win, scissors beat paper');
+            humanScore+=1;
+        }
+        else if(humanChoose === 'paper' && computerChoose ==='rock'){
+            console.log('you win, paper beat rock');
+            humanScore+=1;
+        }
+        else if(humanChoose === 'rock' && computerChoose ==='scissors'){
+            console.log('you win, rock beat scissors');
+            humanScore+=1;
+        }
+        else{
+            console.log('it is a draw');
+        }
+      }
+      
+        </script>
+    </body>
+</html>
