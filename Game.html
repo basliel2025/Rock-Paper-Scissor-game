@@ -5,10 +5,10 @@
     </head>
     <body>
         <script> 
-        let humanScore =0;
-        let computerScore =0;
+         let humanScore =0;
+         let computerScore =0;
       function getComputerChoice(){
-        const choice = ['rock','paper','scissor'];
+        const choice = ['rock','paper','scissors'];
         const pick = choice[Math.floor(Math.random()*choice.length)];
         return pick;
       }
@@ -27,8 +27,11 @@
             }
         }
       }
-      function playGround(humanChoice, computerChoice){
-        if(humanChoose === 'rock' && computerChoose === 'paper'){
+      function playGround(humanChoose, computerChoose){
+        if(humanChoose=== null){
+            console.log('Quit match');
+        }
+       else if(humanChoose === 'rock' && computerChoose === 'paper'){
             console.log('you lose, paper beat rock');
             computerScore+=1;
         }
@@ -52,11 +55,35 @@
             console.log('you win, rock beat scissors');
             humanScore+=1;
         }
-        else{
-            console.log('it is a draw');
+        else if(humanChoose === 'rock' && computerChoose==='rock'){
+            console.log('you both picked rock and it is a draw');
+        }
+        else if(humanChoose==='paper' && computerChoose ==='paper'){
+            console.log('you both picked paper so it is a draw');
+        }
+        else if(humanChoose==='scissors' && computerChoose==='scissors'){
+            console.log('you both picked scissors so it is a draw');
         }
       }
-      
+      let score = 0;
+      while(score<5){
+        let human = getHumanChoice();
+        if(human === null){
+            console.log('Quit match');
+            break;
+        }
+      playGround(human ,getComputerChoice());
+      score++;
+      }
+      if(humanScore>computerScore){
+        console.log('you win ' + humanScore + '-'+ computerScore);
+      }
+      else if(humanScore<computerScore){
+        console.log('you lost ' + computerScore + '-'+ humanScore);
+      }
+      else{
+        console.log('it is a draw');
+      }
         </script>
     </body>
 </html>
