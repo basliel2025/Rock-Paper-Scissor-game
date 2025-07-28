@@ -1,10 +1,10 @@
  let humanScore =0;
-         let computerScore =0;
-      function getComputerChoice(){
-        const choice = ['rock','paper','scissors'];
-        const pick = choice[Math.floor(Math.random()*choice.length)];
-        return pick;
-      }
+ let computerScore =0;
+function getComputerChoice(){
+const choice = ['rock','paper','scissors'];
+const pick = choice[Math.floor(Math.random()*choice.length)];
+    return pick;
+ }
       function getHumanChoice(){
         let value ;
         while(true){
@@ -20,7 +20,7 @@
             }
         }
       }
-      function playGround(humanChoose, computerChoose){
+      function playRound(humanChoose, computerChoose){
         if(humanChoose=== null){
             console.log('Quit match');
         }
@@ -65,7 +65,7 @@
             console.log('Quit match');
             break;
         }
-      playGround(human ,getComputerChoice());
+      playRound(human ,getComputerChoice());
       score++;
       }
       if(humanScore>computerScore){
