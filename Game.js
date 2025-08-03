@@ -10,10 +10,7 @@ const pick = choice[Math.floor(Math.random()*choice.length)];
      const computerScored = document.getElementById('computerScore');
       function playRound(e,humanChoose, computerChoose){
         var button = e.target;
-        if(humanChoose=== null){
-            displayScore.textContent ="Quit match";
-        }
-       else if(humanChoose === 'rock' && computerChoose === 'paper'){
+        if(humanChoose === 'rock' && computerChoose === 'paper'){
             displayScore.textContent='you lose, paper beat rock';
             computerScored.textContent= 'computer ' + computerScore++;
         }
@@ -46,17 +43,18 @@ const pick = choice[Math.floor(Math.random()*choice.length)];
         else if(humanChoose==='scissors' && computerChoose==='scissors'){
             displayScore.textContent='you both picked scissors so it is a draw';
         }
-      }
       
-      if(humanScore===5 || computerScore ===5){
+      
+      if(humanScore===5 && computerScore <5){
         displayScore.textContent='you win ' + humanScore + '-'+ computerScore;
       }
-      else if(humanScore<computerScore){
+      else if(humanScore<5 && computerScore ===5){
         displayScore.textContent='you lost ' + computerScore + '-'+ humanScore;
       }
       else{
         displayScore.textContent='it is a draw';
       }
+    }
       let rock = document.getElementById('rock');
       let paper = document.getElementById('paper');
       let scissors = document.getElementById('scissors');
