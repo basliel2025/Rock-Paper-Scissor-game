@@ -14,33 +14,33 @@ const pick = choice[Math.floor(Math.random()*choice.length)];
       function playRound(e,humanChoose, computerChoose){
         var button = e.target;
         if(humanChoose === 'rock' && computerChoose === 'paper'){
-            computerScored.textContent=  computerScore;
             computerScore++;
+            computerScored.textContent=  computerScore;
             displayScore.textContent='you lose, paper beat rock';
         }
         else if(humanChoose === 'paper' && computerChoose === 'scissors'){
+            computerScore++;
             computerScored.textContent=  computerScore;
-            computerScore++
             displayScore.textContent='you lose, scissors beat paper';
         }
         else if(humanChoose === 'scissors' && computerChoose === 'rock'){
-            computerScored.textContent=  computerScore;
             computerScore++;
+            computerScored.textContent=  computerScore;
             displayScore.textContent='you lose, rock beat scissors';
         }
         else if(humanChoose === 'scissors' && computerChoose === 'paper'){
-            playerScore.textContent=  humanScore;
             humanScore++;
+            playerScore.textContent=  humanScore;
             displayScore.textContent='you win, scissors beat paper';
         }
         else if(humanChoose === 'paper' && computerChoose ==='rock'){
-            playerScore.textContent=  humanScore;
             humanScore++;
+            playerScore.textContent=  humanScore;
             displayScore.textContent='you win, paper beat rock';
         }
         else if(humanChoose === 'rock' && computerChoose ==='scissors'){
-            playerScore.textContent=  humanScore;
             humanScore++;
+            playerScore.textContent=  humanScore;
             displayScore.textContent='you win, rock beat scissors';
         }
         else if(humanChoose === 'rock' && computerChoose==='rock'){
@@ -58,10 +58,10 @@ const pick = choice[Math.floor(Math.random()*choice.length)];
         paper.disabled = true;
         scissors.disabled = true;
       if(humanScore===5 && computerScore <5){
-        displayScore.textContent='Player: ' + humanScore + '-'+ 'Computer: ' + computerScore;
+        displayScore.textContent='Player: ' + humanScore + ' - ' + 'Computer: ' + computerScore;
       }
       else if(humanScore<5 && computerScore ===5){
-        displayScore.textContent='Player: ' + humanScore + '-'+ 'Computer: ' + computerScore;
+        displayScore.textContent='Player: ' + humanScore + ' - ' + 'Computer: ' + computerScore;
       }
       else{
         displayScore.textContent='it is a draw';
