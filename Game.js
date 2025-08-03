@@ -8,31 +8,34 @@ const pick = choice[Math.floor(Math.random()*choice.length)];
      const displayScore = document.getElementById('displayScore');
      const playerScore = document.getElementById('playerScore');
      const computerScored = document.getElementById('computerScore');
+      let rock = document.getElementById('rock');
+      let paper = document.getElementById('paper');
+      let scissors = document.getElementById('scissors');
       function playRound(e,humanChoose, computerChoose){
         var button = e.target;
         if(humanChoose === 'rock' && computerChoose === 'paper'){
             displayScore.textContent='you lose, paper beat rock';
-            computerScored.textContent= 'computer ' + computerScore++;
+            computerScored.textContent= 'computer: ' + computerScore++;
         }
         else if(humanChoose === 'paper' && computerChoose === 'scissors'){
             displayScore.textContent='you lose, scissors beat paper';
-            computerScored.textContent= 'computer ' + computerScore++;
+            computerScored.textContent= 'computer: ' + computerScore++;
         }
         else if(humanChoose === 'scissors' && computerChoose === 'rock'){
             displayScore.textContent='you lose, rock beat scissors';
-            computerScored.textContent= 'computer ' + computerScore++;
+            computerScored.textContent= 'computer: ' + computerScore++;
         }
         else if(humanChoose === 'scissors' && computerChoose === 'paper'){
             displayScore.textContent='you win, scissors beat paper';
-            playerScore.textContent= 'player ' + humanScore++;
+            playerScore.textContent= 'player: ' + humanScore++;
         }
         else if(humanChoose === 'paper' && computerChoose ==='rock'){
             displayScore.textContent='you win, paper beat rock';
-            playerScore.textContent= 'player ' + humanScore++;
+            playerScore.textContent= 'player: ' + humanScore++;
         }
         else if(humanChoose === 'rock' && computerChoose ==='scissors'){
             displayScore.textContent='you win, rock beat scissors';
-            playerScore.textContent= 'player ' + humanScore++;
+            playerScore.textContent= 'player: ' + humanScore++;
         }
         else if(humanChoose === 'rock' && computerChoose==='rock'){
             displayScore.textContent='you both picked rock and it is a draw';
@@ -47,17 +50,20 @@ const pick = choice[Math.floor(Math.random()*choice.length)];
       
       if(humanScore===5 && computerScore <5){
         displayScore.textContent='you win ' + humanScore + '-'+ computerScore;
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
       }
       else if(humanScore<5 && computerScore ===5){
         displayScore.textContent='you lost ' + computerScore + '-'+ humanScore;
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
       }
       else{
         displayScore.textContent='it is a draw';
       }
     }
-      let rock = document.getElementById('rock');
-      let paper = document.getElementById('paper');
-      let scissors = document.getElementById('scissors');
       rock.addEventListener('click', function(e){
         playRound(e, 'rock', getComputerChoice());
       });
