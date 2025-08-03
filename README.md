@@ -1,6 +1,6 @@
 # Rock-Paper-Scissors Game
 
-Welcome to the classic Rock-Paper-Scissors game — built for simplicity, fun, and a bit of friendly competition. This project is a lightweight implementation designed to showcase basic game logic, user interaction, and clean code structure.
+Welcome to the classic Rock-Paper-Scissors game built for simplicity, fun, and a bit of friendly competition. This project is a lightweight implementation designed to showcase basic game logic, user interaction, and clean code structure.
 
 ## What It Does
 
@@ -8,6 +8,14 @@ This game lets a user play Rock-Paper-Scissors against the computer. The compute
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+## Why It Exists
+
+This project was built to explore core JavaScript functionality such as:
+- DOM manipulation  
+- Event handling  
+- Modular script structure  
+- Random number generation  
 
 ## How To Run It
 
